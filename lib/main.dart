@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cours_2022/classe.dart';
+import 'package:flutter_cours_2022/crime_lab.dart';
 
 void main() =>
   runApp(const MaterialApp(
