@@ -6,9 +6,11 @@ class CrimeLab
 
   CrimeLab()
   {
+    _crimes= [];
     for(int i = 0; i < 10; i++) {
       Crime crime = Crime();
       crime.set_title = "Crime #$i";
+      crime.set_date(DateTime.now());
       crime.set_solved = i % 2 == 0;
       _crimes.add(crime);
     }

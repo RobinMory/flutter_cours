@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cours_2022/crime.dart';
 import 'package:flutter_cours_2022/crime_lab.dart';
 
 void main() =>
@@ -27,11 +28,19 @@ class _CrimeListState extends State<CrimeList> {
       ),
       body: Column(
         children: crimeLab.get_crimes.map((crime) {
-        return Text(crime.get_title);
+        return setCrimeContainer(crime);
       }).toList(),
       ),
     );
   }
+
+  Column setCrimeContainer(Crime crime) {
+    return  Column(
+        children: [
+          Text(crime.get_title),
+          Text(crime.get_date.toString().substring(0,19))
+        ]);
+    }
 }
 
 
