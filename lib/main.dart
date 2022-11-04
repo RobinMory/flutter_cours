@@ -11,7 +11,6 @@ void main() =>
 class CrimeList extends StatefulWidget {
   const CrimeList({super.key});
 
-
   @override
   State<CrimeList> createState() => _CrimeListState();
 }
@@ -34,13 +33,35 @@ class _CrimeListState extends State<CrimeList> {
     );
   }
 
-  Column setCrimeContainer(Crime crime) {
-    return  Column(
-        children: [
+  InkWell setCrimeContainer(Crime crime) {
+    return InkWell(
+      child: 
+          Column(
+          children: [
           Text(crime.get_title),
           Text(crime.get_date.toString().substring(0,19))
-        ]);
-    }
+        ]),
+        onTap: (){
+          Navigator.push(context,MaterialPageRoute(builder:(context) => CrimeWindow(crime: crime)));
+        },
+    ); 
+  }
+
+}
+
+class CrimeWindow extends StatelessWidget
+{
+  const CrimeWindow({super.key, required this.crime});
+
+  final Crime crime;
+
+  @override 
+  Widget build(BuildContext context)
+  {
+    return Scaffold(
+      appBar: AppBar(title: Text(crime.get_title)),
+    );
+  }
 }
 
 
