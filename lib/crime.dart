@@ -18,10 +18,12 @@ DateTime get get_date => _date;
 bool? get get_solved => _solved;
 
 set set_title(String value) => _title = value;
-set set_solved(bool value) => _solved = value;
+//set set_solved(bool value) => _solved = value;
 //set set_date(DateTime value) => _date = value;
 
   void set_date(DateTime dateTime) {
     this._date = dateTime;
   }
+
+  void set_solved(bool? value) {_solved = value!;}
 }

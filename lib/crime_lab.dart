@@ -11,7 +11,7 @@ class CrimeLab
       Crime crime = Crime();
       crime.set_title = "Crime #$i";
       crime.set_date(DateTime.now());
-      crime.set_solved = i % 2 == 0;
+      crime.set_solved(i % 2 == 0);
       _crimes.add(crime);
     }
   }
